@@ -1,9 +1,9 @@
 {
-    "id": "local-python-runner",
-    "name": "Desert Python Runner",
+    "id": "local-python-obsidian",
+    "name": "Local Python Runner",
     "version": "1.0.0",
     "minAppVersion": "1.0.0",
-    "description": "Runs Python from my local .venv",
+    "description": "Runs Python from local virtual environment",
     "author": "Nathan Lodder",
     "isDesktopOnly": true
 }
