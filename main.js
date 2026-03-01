@@ -21,17 +21,17 @@ module.exports = class LocalPythonRunner extends Plugin {
     this.setupAutoRefresh();
 
     // --- 2. Markdown Code Block Processor ---
-    this.registerMarkdownCodeBlockProcessor("desert-py", (source, el, ctx) => {
+    this.registerMarkdownCodeBlockProcessor("local-py", (source, el, ctx) => {
       this.renderPythonBlock(source, el);
     });
 
     // --- 3. Command: Insert Skeleton ---
     this.addCommand({
-      id: "insert-desert-py-skeleton",
-      name: "Insert Desert-Py Skeleton",
+      id: "insert-local-py-skeleton",
+      name: "Insert Local-Py Skeleton",
       editorCallback: async (editor) => {
         const skeleton = await this.getFileContent("skeleton.py");
-        editor.replaceSelection(`\`\`\`desert-py\n${skeleton}\n\`\`\``);
+        editor.replaceSelection(`\`\`\`local-py\n${skeleton}\n\`\`\``);
       },
     });
   }
@@ -45,7 +45,7 @@ module.exports = class LocalPythonRunner extends Plugin {
       this.app.workspace.on("css-change", () => {
         clearTimeout(debounceTimer);
         debounceTimer = setTimeout(() => {
-          const runButtons = document.querySelectorAll(".desert-run-button");
+          const runButtons = document.querySelectorAll(".local-py-run-button");
           runButtons.forEach((btn, index) => {
             setTimeout(() => btn.click(), index * 100);
           });
@@ -73,12 +73,12 @@ module.exports = class LocalPythonRunner extends Plugin {
    */
   async renderPythonBlock(source, el) {
     const container = el.createEl("div", { cls: "python-runner-container" });
-    const button = container.createEl("button", { text: "Run Code", cls: "desert-run-button" });
+    const button = container.createEl("button", { text: "Run Code", cls: "local-py-run-button" });
     const outputArea = container.createEl("div", { cls: "python-output-area" });
 
     button.addEventListener("click", async () => {
       outputArea.empty();
-      const status = outputArea.createEl("p", { text: "Generating desert py output..." });
+      const status = outputArea.createEl("p", { text: "Generating local-py output..." });
 
       const id = Math.random().toString(36).substring(2, 9);
       const vaultPath = this.app.vault.adapter.getBasePath();
