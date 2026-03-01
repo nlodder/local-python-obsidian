@@ -2,10 +2,10 @@ import plotly.io as pio
 import sys
 import os
 
-# 1. Inject user code at the root level (no indentation required)
+# Inject user code at the root level (no indentation required)
 {{SOURCE}}
 
-# 2. Internal Plotly Handling
+# Internal Plotly Handling
 try:
   if 'fig' in locals():
     # Get user height or default to 450
@@ -32,7 +32,7 @@ try:
 
     pio.write_html(
       fig, 
-      file='{{HTML_PATH}}', 
+      file=r'{{HTML_PATH}}', # use raw string to handle backslashes in paths
       auto_open=False, 
       full_html=True,
       include_plotlyjs='cdn'
@@ -42,4 +42,5 @@ try:
     sys.stderr.write("No 'fig' object found. Ensure your script defines 'fig'.")
 
 except Exception as e:
+  print(f"Plotly Error: {str(e)}")
   sys.stderr.write(f"Plotly Error: {str(e)}")
