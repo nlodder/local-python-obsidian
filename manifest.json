@@ -1,0 +1,9 @@
+{
+    "id": "local-python-runner",
+    "name": "Desert Python Runner",
+    "version": "1.0.0",
+    "minAppVersion": "1.0.0",
+    "description": "Runs Python from my local .venv",
+    "author": "Nathan Lodder",
+    "isDesktopOnly": true
+}
