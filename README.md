@@ -47,16 +47,16 @@ Obsidian Vault/
 ## Enable Plugin in Obsidian Settings
 To enable the plugin, go to Obsidian Settings > Community plugins > Installed plugins, and enable the Local Python Runner plugin.
 You can also enable a short cut that creates a code block with a skeleton python script (the contents of the `skeleton.py` file in this repo):
-Obsidian Settings > Hotkeys > Local Python Runner: Insert Local-Py Skeleton, click '+' and enter your desired shortcut combo on your keyboard.
+Obsidian Settings > Hotkeys > Local Python Runner: Insert Local Python Runner Skeleton, click '+' and enter your desired shortcut combo on your keyboard.
 
 # Using Plugin
-1. Create a code block in your note with `local-py` as the language attribute:
+1. Create a code block in your note with `python local-py` as the language attribute:
 
 ```text
-```local-py
+```python local-py
 ```
 2. Add your python code, for example:
-```local-py
+```python local-py
 import plotly.express as px
 import pandas as pd
 
@@ -84,5 +84,5 @@ fig.update_layout(margin=dict(l=20, r=20, t=40, b=20))
 4. Click this button to run the code and display the interactive plot (if you are using plotly).
 
 ## Shortcut
-Use the shortcut you created (for 'Local Python Runner: Insert Local-Py Skeleton') to insert a code block in your file with the contents of `skeleton.py` inside.
+Use the shortcut you created (for 'Local Python Runner: Insert Local Python Runner Skeleton') to insert a code block in your file with the contents of `skeleton.py` inside.
 Feel free to modify this file to suit your preferences for your template python script.
