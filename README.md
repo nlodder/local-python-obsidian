@@ -81,6 +81,7 @@ fig.update_layout(margin=dict(l=20, r=20, t=40, b=20))
 ```
 3. Click elsewhere in your note (just remove cursor from code block), and you should see a 'Run Code' button appear:
 <img width="709" height="74" alt="image" src="https://github.com/user-attachments/assets/09a02114-f903-427f-87aa-9eabe958114b" />
+
 4. Click this button to run the code and display the interactive plot (if you are using plotly).
 
 ## Shortcut
