@@ -1,3 +1,6 @@
+# CAUTION
+There is currently an issue where the plugin does not render regular python code blocks properly, only rendering when the tage is 'python local-py'. I am actively working on resolving this issue.
+
 # Summary
 Plugin to run python scripts written in Obsidian code blocks and render plots using local python virtual environment. No internet connection is required for use after initial install.
 
